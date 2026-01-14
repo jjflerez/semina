@@ -1,0 +1,7 @@
+{
+  "name": "semina",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
