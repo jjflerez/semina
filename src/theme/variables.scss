@@ -1,2 +1,23 @@
 // For information on how to create your own theme, please refer to:
 // https://ionicframework.com/docs/theming/
+:root {
+  --color-claro: #f49797;
+  --color-oscuro: #470808;
+  --espaciado-base: 1rem;
+  --espaciado-grande: 2rem;
+}
+:root {
+  --slide-color-claro: #ffffff;
+  --slide-color-oscuro: #1e1e1e;
+  --slide-text-claro: #000000;
+  --slide-text-oscuro: #ffffff;
+}
+
+.slide-content {
+  background-color: var(--slide-bg);
+  color: var(--slide-text);
+  padding: 16px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+

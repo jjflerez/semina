@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,8 +13,38 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Listo para crear una aplicación?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  
+<swiper-container
+  pagination="true"
+  loop="true"
+  slides-per-view="1"
+  navigation="true"
+>
+  <swiper-slide *ngFor="let genre of genres">
+    <div
+      class="slide-content"
+      [class.dark-slide]="temaOscuro"
+    >
+      <h2>{{ genre.Title }}</h2>
+      <img [src]="genre.Image" />
+      <p>{{ genre.Description }}</p>
+    </div>
+  </swiper-slide>
+  
+  
+</swiper-container>
+
+<ion-button expand="block" (click)="cambiarTema()">
+  Cambiar tema
+</ion-button>
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Card Title</ion-card-title>
+    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    Here's a small text description for the card content. Nothing more, nothing less.
+  </ion-card-content>
+</ion-card>
 </ion-content>
