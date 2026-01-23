@@ -12,7 +12,7 @@
 .slide-content h2 {
   margin: 0;
   font-size: 25px;
-  color: #ff0202;
+  color: #000000;
 }
 .slide-content p {
   font-size: 16px;
@@ -25,17 +25,17 @@
   background-color: var(--color-claro);
 }
 ion-card {
-  background:#ff0202
+  background:#6d6d6d
 }
 .slide-content {
-  background-color: #000000;
-  color: #000;
+  background-color: #156e07;
+  color: #00af09;
   padding: 16px;
   border-radius: 12px;
   transition: background-color 0.3s ease;
 }
 
 .dark-slide {
-  background-color: #e91111;
-  color: #0d0000;
+  background-color: #7d7c7c;
+  color: #07e907;
 }
