@@ -1,65 +1,62 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Home
-    </ion-title>
-  </ion-toolbar>
+<ion-toolbar class="apple-toolbar">
+<ion-title>Home</ion-title>
+</ion-toolbar>
 </ion-header>
 
+
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <swiper-container
-    pagination="true"
-    loop="true"
-    slides-per-view="1"
-    navigation="true"
-  >
-    <swiper-slide *ngFor="let genre of genres">
-      <div
-        class="slide-content"
-        [class.dark-slide]="temaOscuro"
-      >
-        <h2>{{ genre.Title }}</h2>
-        <img [src]="genre.Image" />
-        <p>{{ genre.Description }}</p>
-      </div>
-    </swiper-slide>
-  </swiper-container>
 
-  <ion-button expand="block" (click)="cambiarTema()">
-    Cambiar tema
-  </ion-button>
+<swiper-container
+pagination="true"
+loop="true"
+slides-per-view="1"
+navigation="true"
+>
+<swiper-slide *ngFor="let genre of genres">
+<div
+class="slide-content apple-card"
+[class.dark-slide]="temaOscuro"
+>
+<h2>{{ genre.Title }}</h2>
+<img [src]="genre.Image" />
+<p>{{ genre.Description }}</p>
+</div>
+</swiper-slide>
+</swiper-container>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    </ion-card-header>
 
-    <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
-    </ion-card-content>
-  </ion-card>
+<ion-button expand="block" class="apple-button" (click)="cambiarTema()">
+Cambiar tema
+</ion-button>
 
-  <div>
-    <h3>Demo ionic storage</h3>
-    <div [style.background-color]="coloractual">
-      <p>Team actual: {{coloractual=== coloroscuro? 'Oscuro' : 'Claro'}}</p>
-    </div>
-  </div>
 
-  <div>
-    <ion-button (click)="Cambiarcolor()"> cambiar team y guardar</ion-button>
-  </div>
+<ion-card class="apple-card">
+<ion-card-header>
+<ion-card-title>Card Title</ion-card-title>
+<ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+</ion-card-header>
+<ion-card-content>
+Here's a small text description for the card content.
+</ion-card-content>
+</ion-card>
 
-  <!-- ✅ ÚNICO AGREGADO -->
-  <ion-button expand="block" color="primary" (click)="irAIntro()">
-    Ver Intro
-  </ion-button>
+
+<div>
+<h3>Demo ionic storage</h3>
+<div [style.background-color]="coloractual">
+<p>Team actual: {{coloractual=== coloroscuro? 'Oscuro' : 'Claro'}}</p>
+</div>
+</div>
+
+
+<ion-button (click)="Cambiarcolor()"> cambiar team y guardar</ion-button>
+
+
+<ion-button expand="block" class="apple-button" (click)="irAIntro()">
+Ver Intro
+</ion-button>
+
 
 </ion-content>

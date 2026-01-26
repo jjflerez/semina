@@ -22,11 +22,11 @@ export class IntroPage implements OnInit {
   ngOnInit() {}
 
   async goBack() {
-    // 👉 Guardamos que ya vio la intro
+    //  Guardamos que ya vio la intro
     await this.storageService.set('introVista', true);
     console.log('Intro marcada como vista');
 
-    // 👉 Volvemos al home
+    // Volvemos al home
     this.router.navigate(['/home']);
   }
 }

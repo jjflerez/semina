@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { StorageService } from '../services/storage';
-import { Router } from '@angular/router'; // 👈 agregado
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -27,6 +27,7 @@ export class HomePage implements OnInit {
   ) {}
 
   async ngOnInit() {}
+  
 
   cambiarTema() {
     this.temaOscuro = !this.temaOscuro;
@@ -78,8 +79,16 @@ export class HomePage implements OnInit {
     }
   }
 
-  // ✅ ÚNICA FUNCIÓN NUEVA (NO afecta nada)
   irAIntro() {
     this.router.navigate(['/intro']);
   }
+
+ 
+
+
+
+
+
+
+  
 }

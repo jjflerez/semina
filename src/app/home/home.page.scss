@@ -1,41 +1,55 @@
-.slide-content  {
-  text-align:center;
-  padding: 10px;
-}
-.slide-content img {
-  width: 100%;
-  max-height: 300px;
-  height: auto;
-  border-radius: 10px;
-  margin: 10% 0;
-}
-.slide-content h2 {
-  margin: 0;
-  font-size: 25px;
-  color: #000000;
-}
-.slide-content p {
-  font-size: 16px;
-  color: #ffffff;
-  text-align: justify;
+.apple-toolbar {
+backdrop-filter: blur(20px);
+background: rgba(0,0,0,.6);
+border-bottom: .5px solid rgba(255,255,255,.1);
 }
 
-.card {
-  padding: var(--espaciado-base);
-  background-color: var(--color-claro);
+
+.apple-card {
+background: var(--apple-card) !important;
+backdrop-filter: blur(15px);
+border-radius: 22px;
+box-shadow: 0 20px 40px rgba(0,0,0,.5);
 }
-ion-card {
-  background:#6d6d6d
-}
+
+
 .slide-content {
-  background-color: #156e07;
-  color: #00af09;
-  padding: 16px;
-  border-radius: 12px;
-  transition: background-color 0.3s ease;
+text-align: center;
+padding: 20px;
 }
+
+
+.slide-content img {
+width: 100%;
+max-height: 300px;
+border-radius: 18px;
+margin: 16px 0;
+}
+
+
+.slide-content h2 {
+font-size: 22px;
+font-weight: 700;
+color: #fff;
+}
+
+
+.slide-content p {
+font-size: 14px;
+color: var(--apple-muted);
+}
+
 
 .dark-slide {
-  background-color: #7d7c7c;
-  color: #07e907;
+background-color: #1c1c1e !important;
+}
+
+
+.apple-button {
+margin: 20px 0;
+height: 56px;
+border-radius: 30px;
+font-size: 18px;
+font-weight: 600;
+--background: var(--apple-red);
 }

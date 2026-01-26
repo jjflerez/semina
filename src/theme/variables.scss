@@ -1,23 +1,22 @@
 // For information on how to create your own theme, please refer to:
 // https://ionicframework.com/docs/theming/
 :root {
-  --color-claro: #f49797;
-  --color-oscuro: #470808;
-  --espaciado-base: 1rem;
-  --espaciado-grande: 2rem;
-}
-:root {
-  --slide-color-claro: #ffffff;
-  --slide-color-oscuro: #1e1e1e;
-  --slide-text-claro: #000000;
-  --slide-text-oscuro: #ffffff;
+/* variables que ya tenías */
+--color-claro: #f49797;
+--color-oscuro: #470808;
+--espaciado-base: 1rem;
+--espaciado-grande: 2rem;
+
+
+/* Apple Music style (nuevas, originales) */
+--apple-bg: #0b0b0d;
+--apple-card: rgba(28, 28, 30, 0.85);
+--apple-muted: #9e9ea7;
+--apple-red: #fa233b;
 }
 
-.slide-content {
-  background-color: var(--slide-bg);
-  color: var(--slide-text);
-  padding: 16px;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-}
 
+ion-content {
+--background: var(--apple-bg);
+color: #ffffff;
+}
