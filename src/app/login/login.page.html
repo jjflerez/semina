@@ -10,12 +10,12 @@
     <img src="assets/image/user.png">
   </figure>
 
-  <form [formGroup]="Loginform" (ngSubmit)="loginuser(Loginform.value)">
+  <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
     <ion-item>
       <ion-input label="email" type="email" formControlName="email"></ion-input>
     </ion-item>
     <div>
-      <ion-text color="danger" *ngIf="Loginform.get('email')?.invalid && Loginform.get('email')?.touched">
+      <ion-text color="danger" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
   <p class="error-text">Email inválido</p>
 </ion-text>
     </div>
@@ -23,13 +23,14 @@
     <ion-item>
       <ion-input label="Contraseña" type="password" formControlName="password"></ion-input>
     </ion-item>
-    <ion-text color="danger" *ngIf="Loginform.get('password')?.invalid && Loginform.get('password')?.touched">
+    <ion-text color="danger" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
   <p class="error-text">Contraseña inválida</p>
 </ion-text>
 
 
-    <ion-button expand="full" type="submit" [disabled]="Loginform.invalid">
+    <ion-button expand="full" type="submit" [disabled]="loginForm.invalid">
       Login
     </ion-button>
   </form>
+{{errorMessage}}
 </ion-content>

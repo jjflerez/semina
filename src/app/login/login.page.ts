@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
-import { IonicModule } from  "@ionic/angular"
-;
+import { IonicModule, NavController } from "@ionic/angular" // Asegúrate que el path sea correcto
+import { Authservice } from '../services/auth';
 
 @Component({
   selector: 'app-login',
@@ -18,8 +18,11 @@ import { IonicModule } from  "@ionic/angular"
 })
 export class LoginPage implements OnInit {
 
-  Loginform: FormGroup;
-  validaton_messages = {
+  // Cambiado a camelCase para seguir estándares
+  loginForm: FormGroup; 
+  errorMessage: string = '';
+
+  validationMessages = {
     'email': [
       { type: 'required', message: 'El email es obligatorio.' },
       { type: 'email', message: 'Ingrese un email válido.' }
@@ -30,26 +33,38 @@ export class LoginPage implements OnInit {
     ]
   };
 
-  constructor(private formbuilder: FormBuilder) {
-    this.Loginform = this.formbuilder.group({
-      email: new FormControl(
-        '',
-        [Validators.required, 
-          Validators.email]
-      ),
-      password: new FormControl(
-        '',
-        [Validators.required,
-          Validators.minLength(6)
-        ]
-      )
+  // ¡CORRECCIÓN AQUÍ!: Se añade private authService: Authservice
+  constructor(
+    private formBuilder: FormBuilder,
+    private authService: Authservice,
+    private navCtrl: NavController 
+  ) {
+    this.loginForm = this.formBuilder.group({
+      email: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.email
+      ])),
+      password: new FormControl('', Validators.compose([
+        Validators.required,
+        Validators.minLength(6)
+      ]))
     });
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  loginuser (credentials: any) {
-    console.log(credentials);
+  loginUser(credentials: any) {
+    if (this.loginForm.valid) {
+      this.authService.loginuser(credentials.email, credentials.password)
+        .then(res => {
+          console.log('Login exitoso:', res);
+          this.errorMessage = '';
+          this.navCtrl.navigateForward('/home');
+        })
+        .catch(err => {
+          //console.error('Error en login:', err);
+          this.errorMessage = 'Credenciales inválidas.';
+        });
+    }
   }
 }
