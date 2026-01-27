@@ -1,0 +1,60 @@
+
+.profile-default-image img {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+ion-content {
+  --background: linear-gradient(180deg, #0f0f0f, #1c1c1e);
+}
+
+ion-toolbar {
+  --background: transparent;
+}
+
+ion-title {
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+}
+
+.profile-default-image p {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.profile-default-image img {
+  width: 110px;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+ion-item {
+  --background: rgba(255, 255, 255, 0.08);
+  --border-radius: 14px;
+  margin-bottom: 16px;
+  --color: #fff;
+}
+
+ion-input {
+  --color: #fff;
+}
+
+ion-button {
+  margin-top: 20px;
+  --background: #fa233b;
+  --background-activated: #d91f34;
+  --border-radius: 20px;
+  font-weight: 600;
+}
+
+.error-text {
+  margin-top: 6px;
+  margin-left: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #ff453a; // rojo iOS / Apple Music
+  letter-spacing: 0.2px;
+}

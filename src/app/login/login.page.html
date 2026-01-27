@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <figure class="profile-default-image ion-text-center">
+    <p>Ingresa Tus Credenciales</p>
+    <img src="assets/image/user.png">
+  </figure>
+
+  <form [formGroup]="Loginform" (ngSubmit)="loginuser(Loginform.value)">
+    <ion-item>
+      <ion-input label="email" type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <div>
+      <ion-text color="danger" *ngIf="Loginform.get('email')?.invalid && Loginform.get('email')?.touched">
+  <p class="error-text">Email inválido</p>
+</ion-text>
+    </div>
+
+    <ion-item>
+      <ion-input label="Contraseña" type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <ion-text color="danger" *ngIf="Loginform.get('password')?.invalid && Loginform.get('password')?.touched">
+  <p class="error-text">Contraseña inválida</p>
+</ion-text>
+
+
+    <ion-button expand="full" type="submit" [disabled]="Loginform.invalid">
+      Login
+    </ion-button>
+  </form>
+</ion-content>
