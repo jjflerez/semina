@@ -28,7 +28,7 @@ export class IntroPage implements OnInit {
     { 
       title: 'Bienvenido', 
       subtitle: 'Descubre música sin límites.',
-      image: 'assets/imgs/slide1.jpg',
+      image: 'assets/imgs/music.jpg',
       color: '#fa243c' // Rojo Apple Music
     },
     { 
