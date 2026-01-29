@@ -1,55 +1,74 @@
-.apple-toolbar {
-backdrop-filter: blur(20px);
-background: rgba(0,0,0,.6);
-border-bottom: .5px solid rgba(255,255,255,.1);
+.apple-home {
+  --background: #807a7a;
+  
+  &.dark-mode {
+    --background: #000;
+  }
 }
 
-
-.apple-card {
-background: var(--apple-card) !important;
-backdrop-filter: blur(15px);
-border-radius: 22px;
-box-shadow: 0 20px 40px rgba(0,0,0,.5);
+.section-header {
+  padding: 20px 20px 10px;
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.5px;
+  }
 }
 
+// Tarjeta de Swiper Estilo Apple
+.highlight-card {
+  height: 250px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 
-.slide-content {
-text-align: center;
-padding: 20px;
+  .card-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+
+    .genre-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #fa243c;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      margin: 5px 0;
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+  }
 }
 
-
-.slide-content img {
-width: 100%;
-max-height: 300px;
-border-radius: 18px;
-margin: 16px 0;
-}
-
-
-.slide-content h2 {
-font-size: 22px;
-font-weight: 700;
-color: #fff;
-}
-
-
-.slide-content p {
-font-size: 14px;
-color: var(--apple-muted);
-}
-
-
-.dark-slide {
-background-color: #1c1c1e !important;
-}
-
-
-.apple-button {
-margin: 20px 0;
-height: 56px;
-border-radius: 30px;
-font-size: 18px;
-font-weight: 600;
---background: var(--apple-red);
+// Lista de ítems limpia
+.apple-list {
+  background: transparent;
+  margin: 0 10px;
+  
+  ion-item {
+    --background: #f14949;
+    --border-radius: 10px;
+    margin-bottom: 8px;
+    font-weight: 500;
+    
+    &::part(native) {
+      padding: 5px 15px;
+    }
+  }
 }

@@ -1,5 +1,5 @@
 import { Injectable, inject } from '@angular/core';
-import { StorageService } from '../services/storage'; // Asegúrate de que la ruta sea correcta
+import { StorageService } from '../services/storage'; 
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -16,7 +16,6 @@ export class Authservice {
     return new Promise(async (resolve, reject) => {
       if (email === 'jose@gmail.com' && password === 'admin32*') {
         
-        // [tarea]: si el login es éxito guardar en el storage "login:true"
         await this.storage.set('login', true);
         
         console.log('Sesión guardada en storage');

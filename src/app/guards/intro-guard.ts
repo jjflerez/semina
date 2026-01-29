@@ -8,9 +8,11 @@ export const introGuard: CanActivateFn = async (): Promise<boolean | UrlTree> =>
 
   console.log('introGuard ejecutándose...');
 
-  const introVisto = await storage.get('introVisto');
-  console.log('introVisto:', introVisto);
-
+  const introVisto = await storage.get('introVisto'); // Debe ser igual al del set
+if (!introVisto) {
+  return router.parseUrl('/intro');
+}
+return true;
   if (!introVisto) {
     console.log('No se ha visto intro, devolviendo UrlTree a /intro');
     return router.parseUrl('/intro');  // Redirige a intro si no se ha visto

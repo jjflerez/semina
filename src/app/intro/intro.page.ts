@@ -25,10 +25,30 @@ export class IntroPage implements OnInit {
   currentIndex = 0;
 
   slides = [
-    { title: 'Bienvenido', subtitle: 'Descubre música sin límites' },
-    { title: 'Explora', subtitle: 'Encuentra tus artistas favoritos' },
-    { title: 'Disfruta', subtitle: 'Playlists hechas para ti' },
-    { title: 'Empieza', subtitle: 'La música te espera' }
+    { 
+      title: 'Bienvenido', 
+      subtitle: 'Descubre música sin límites.',
+      image: 'assets/imgs/slide1.jpg',
+      color: '#fa243c' // Rojo Apple Music
+    },
+    { 
+      title: 'Explora', 
+      subtitle: 'Encuentra tus artistas favoritos en alta fidelidad.',
+      image: 'assets/imgs/slide2.jpg',
+      color: '#af40ff'
+    },
+    { 
+      title: 'Elige tu estilo', 
+      subtitle: 'escucha tu música favorita.',
+      image: 'assets/imgs/slide3.jpg',
+      color: '#007aff'
+    },
+    { 
+      title: 'Empieza', 
+      subtitle: 'La música te espera. Crea tu propio mundo.',
+      image: 'assets/imgs/slide3.jpg',
+      color: '#007aff'
+    }
   ];
 
   constructor(
@@ -45,7 +65,7 @@ export class IntroPage implements OnInit {
   }
 
   async goBack() {
-    await this.storageService.set('introVista', true);
+    await this.storageService.set('introVisto', true);
     this.router.navigate(['/home']);
   }
 }

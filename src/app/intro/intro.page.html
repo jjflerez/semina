@@ -1,36 +1,30 @@
-<ion-header>
-  <ion-toolbar class="apple-toolbar">
-    <ion-title>Intro</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="apple-intro-wrapper" 
+       [style.background-image]="'url(' + (slides[currentIndex].image || 'assets/default-bg.jpg') + ')'">
+    
+    <div class="glass-overlay"></div>
 
-<ion-content fullscreen class="intro-content ion-padding">
+    <div class="content-container">
+      
+      <div class="text-animate-box">
+        <h1 class="apple-title">{{ slides[currentIndex].title }}</h1>
+        <p class="apple-subtitle">{{ slides[currentIndex].subtitle }}</p>
+      </div>
 
-  <div
-    class="slide
-           ion-text-center
-           ion-padding
-           ion-align-items-center
-           ion-justify-content-center">
+      <div class="footer-actions">
+        
+        <div class="dots-indicator">
+          <span *ngFor="let s of slides; let i = index" 
+                [class.active]="i === currentIndex"></span>
+        </div>
 
-    <ion-title size="large">
-      {{ slides[currentIndex].title }}
-    </ion-title>
-
-    <p class="ion-margin-top">
-      {{ slides[currentIndex].subtitle }}
-    </p>
-
-  </div>
-
-  <div class="bottom-action ion-padding">
-    <ion-button
-      expand="block"
-      class="apple-button"
-      *ngIf="currentIndex < slides.length - 1"
-      (click)="next()">
-      Siguiente
-    </ion-button>
+        <ion-button
+          expand="block"
+          class="apple-button"
+          *ngIf="currentIndex < slides.length - 1"
+          (click)="next()">
+          Siguiente
+        </ion-button>
 
     <ion-button
       expand="block"
@@ -41,5 +35,6 @@
     </ion-button>
   </div>
 
+    </div>
+  </div>
 </ion-content>
-
