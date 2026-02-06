@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { introGuard } from './guards/intro-guard';
 import { authGuard } from './guards/auth-guard';
+import { RegistroComponent } from './components/registro/registro.component';
 
 export const routes: Routes = [
   {

@@ -1,6 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 import { AppComponent } from './app.component';
+import  { Routes } from '@angular/router';
+import { RegistroComponent } from './components/registro/registro.component';
+
 
 describe('AppComponent', () => {
   it('should create the app', async () => {
@@ -13,4 +16,5 @@ describe('AppComponent', () => {
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
+  
 });
