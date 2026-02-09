@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators, F
 import { IonicModule, NavController } from "@ionic/angular";
 import { Authservice } from '../services/auth';
 import { Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,8 @@ import { Router } from '@angular/router';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    IonicModule
+    IonicModule,
+    RouterModule
   ]
 })
 export class LoginPage implements OnInit {
@@ -77,4 +79,11 @@ export class LoginPage implements OnInit {
     }
 
   }
+
+irRegistro(){
+  console.log("CLICK FUNCIONA");
+  this.router.navigate(['/registro']);
+}
+
+
 }

@@ -41,5 +41,14 @@ export class Authservice {
       }, 1000);
     });
   }
+  async guardarUsuario(data: any): Promise<any> {
+
+    return new Promise((resolve) => {
+
+      localStorage.setItem('usuario', JSON.stringify(data));
+      resolve(true);
+
+    });
+  }
   
 }

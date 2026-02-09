@@ -1,0 +1,44 @@
+
+.apple-music-menu {
+  --background: #f9f9f9; 
+  border-right: 0.5px solid #e0e0e0;
+}
+
+
+ion-title {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.5px;
+  padding-inline-start: 16px;
+}
+
+/* Items del Menú */
+ion-item {
+  --background: transparent;
+  --border-radius: 8px;
+  --transition: 0.2s ease-in-out;
+  margin: 4px 12px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.selected {
+  --color: #fa243c; 
+  --background: rgba(250, 36, 60, 0.1); 
+}
+
+.selected ion-icon {
+  color: #fa243c;
+}
+
+/* Iconos */
+ion-icon {
+  font-size: 20px;
+  margin-right: 12px;
+  color: #8e8e93; /* Gris iOS */
+}
+
+/* Quitar líneas innecesarias del header */
+ion-header {
+  background: #f9f9f9;
+}

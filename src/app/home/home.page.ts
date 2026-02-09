@@ -79,7 +79,7 @@ export class HomePage implements OnInit {
     }
   }
 
-  irAIntro() {
+  irAintro() {
     this.router.navigate(['/intro']);
   }
 

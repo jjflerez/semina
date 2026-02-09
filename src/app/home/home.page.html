@@ -1,6 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Home</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+
+
+    </ion-buttons>
     <ion-buttons slot="end">
       <ion-button (click)="cambiarTema()">
         <ion-icon slot="icon-only" [name]="temaOscuro ? 'sunny' : 'moon'"></ion-icon>
@@ -43,7 +48,7 @@
       <ion-note slot="end">{{coloractual === coloroscuro ? 'Oscuro' : 'Claro'}}</ion-note>
     </ion-item>
     
-    <ion-item (click)="irAIntro()" button>
+    <ion-item (click)="irAintro()" button>
       <ion-icon slot="start" name="play-circle-outline" color="danger"></ion-icon>
       <ion-label>Repetir Introducción</ion-label>
     </ion-item>
