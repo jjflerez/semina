@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { introGuard } from './guards/intro-guard';
 import { authGuard } from './guards/auth-guard';
-import { RegistroComponent } from './components/registro/registro.component';
+import { RegistroComponent } from './components/registro/registro';
 
 export const routes: Routes = [
   {
@@ -24,5 +24,9 @@ export const routes: Routes = [
     path: 'login',
     loadComponent: () =>
       import('./login/login.page').then(m => m.LoginPage)
+  },
+  {
+    path: 'registro',
+    loadComponent: () => import('./registro/register.page').then( m => m.RegistroPage)
   },
 ];

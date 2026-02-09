@@ -31,4 +31,15 @@ export class Authservice {
     await this.storage.remove('login');
     this.router.navigate(['/login']);
   }
+  async registerUser(datosUsuario: any): Promise<void> {
+    // Aquí podrías hacer una llamada HTTP a tu backend para registrar al usuario
+    // Por simplicidad, vamos a simular un registro exitoso con un timeout
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        console.log('Usuario registrado en el servidor:', datosUsuario);
+        resolve();
+      }, 1000);
+    });
+  }
+  
 }
