@@ -1,20 +1,58 @@
-.login-item {
-  --background: #282828;
+/* Fondo estilo Apple Music */
+.apple-content {
+  --background: linear-gradient(#0f0f0f, #1c1c1e);
+}
+
+/* Toolbar translúcido */
+.apple-toolbar {
+  --background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(12px);
+}
+
+.apple-title {
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Inputs estilo iOS */
+.apple-item {
+  --background: rgba(255,255,255,0.05);
+  --border-radius: 14px;
+  --border-color: rgba(255,255,255,0.12);
   --color: white;
-  --highlight-color-focused: #1db954;
-  border-radius: 8px;
+  margin-top: 14px;
+  backdrop-filter: blur(10px);
 }
 
+.apple-item ion-label {
+  color: #d1d1d6;
+  font-weight: 500;
+}
+
+.apple-item ion-input {
+  color: white;
+}
+
+/* Botón Apple */
+.apple-btn {
+  --background: #ffffff;
+  --color: #000000;
+  --border-radius: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Link inferior */
+.apple-link {
+  --color: #98989d;
+}
+
+/* Errores */
 .error-message {
-  color: #eb445a;
-  font-size: 0.8rem;
-  padding-left: 5px;
+  color: #ff453a;
+  font-size: 13px;
+  margin-left: 6px;
   margin-top: 4px;
-}
-
-.btn-spotify {
-  --background: #1db954;
-  --color: black;
-  font-weight: bold;
-  --border-radius: 25px;
 }

@@ -1,67 +1,77 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar style="--background: #000000;">
-    <ion-title style="color: white; text-align: center;">Crear Cuenta</ion-title>
+  <ion-toolbar class="apple-toolbar">
+    <ion-title class="apple-title">Crear Cuenta</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content style="--background: #121212;">
+<ion-content class="apple-content">
   <div class="ion-padding">
     <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
-      
-      <ion-item fill="outline" mode="md" class="ion-margin-top login-item">
-        <ion-label position="stacked" style="color: #1db954;">Nombre</ion-label>
+
+      <!-- Nombre -->
+      <ion-item fill="outline" mode="md" class="apple-item">
+        <ion-label position="stacked">Nombre</ion-label>
         <ion-input formControlName="nombre" placeholder="Ingresa tu nombre"></ion-input>
       </ion-item>
       <div class="error-container">
         <ng-container *ngFor="let message of validationMessages.nombre">
-          <div class="error-message" *ngIf="registerForm.get('nombre')?.hasError(message.type) && registerForm.get('nombre')?.touched">
+          <div class="error-message"
+            *ngIf="registerForm.get('nombre')?.hasError(message.type) && registerForm.get('nombre')?.touched">
             {{ message.message }}
           </div>
         </ng-container>
       </div>
 
-      <ion-item fill="outline" mode="md" class="ion-margin-top login-item">
-        <ion-label position="stacked" style="color: #1db954;">Apellido</ion-label>
+      <!-- Apellido -->
+      <ion-item fill="outline" mode="md" class="apple-item">
+        <ion-label position="stacked">Apellido</ion-label>
         <ion-input formControlName="apellido" placeholder="Ingresa tu apellido"></ion-input>
       </ion-item>
       <div class="error-container">
         <ng-container *ngFor="let message of validationMessages.apellido">
-          <div class="error-message" *ngIf="registerForm.get('apellido')?.hasError(message.type) && registerForm.get('apellido')?.touched">
+          <div class="error-message"
+            *ngIf="registerForm.get('apellido')?.hasError(message.type) && registerForm.get('apellido')?.touched">
             {{ message.message }}
           </div>
         </ng-container>
       </div>
 
-      <ion-item fill="outline" mode="md" class="ion-margin-top login-item">
-        <ion-label position="stacked" style="color: #1db954;">Email</ion-label>
+      <!-- Email -->
+      <ion-item fill="outline" mode="md" class="apple-item">
+        <ion-label position="stacked">Email</ion-label>
         <ion-input formControlName="email" type="email" placeholder="ejemplo@correo.com"></ion-input>
       </ion-item>
       <div class="error-container">
         <ng-container *ngFor="let message of validationMessages.email">
-          <div class="error-message" *ngIf="registerForm.get('email')?.hasError(message.type) && registerForm.get('email')?.touched">
+          <div class="error-message"
+            *ngIf="registerForm.get('email')?.hasError(message.type) && registerForm.get('email')?.touched">
             {{ message.message }}
           </div>
         </ng-container>
       </div>
 
-      <ion-item fill="outline" mode="md" class="ion-margin-top login-item">
-        <ion-label position="stacked" style="color: #1db954;">Contraseña</ion-label>
+      <!-- Password -->
+      <ion-item fill="outline" mode="md" class="apple-item">
+        <ion-label position="stacked">Contraseña</ion-label>
         <ion-input formControlName="password" type="password" placeholder="Mínimo 6 caracteres"></ion-input>
       </ion-item>
       <div class="error-container">
         <ng-container *ngFor="let message of validationMessages.password">
-          <div class="error-message" *ngIf="registerForm.get('password')?.hasError(message.type) && registerForm.get('password')?.touched">
+          <div class="error-message"
+            *ngIf="registerForm.get('password')?.hasError(message.type) && registerForm.get('password')?.touched">
             {{ message.message }}
           </div>
         </ng-container>
       </div>
 
-      <ion-button expand="block" class="btn-spotify ion-margin-top" [disabled]="registerForm.invalid" type="submit">
-        REGISTRARME
+      <ion-button expand="block" class="apple-btn ion-margin-top"
+        [disabled]="registerForm.invalid" type="submit">
+        Continuar
       </ion-button>
+
     </form>
 
-    <ion-button expand="block" fill="clear" (click)="goToLogin()" style="--color: #ffffff;">
+    <ion-button expand="block" fill="clear" (click)="goToLogin()" class="apple-link">
       ¿Ya tienes cuenta? Inicia sesión
     </ion-button>
 

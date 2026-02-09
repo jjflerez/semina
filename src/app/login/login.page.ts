@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
-import { IonicModule, NavController } from "@ionic/angular" // Asegúrate que el path sea correcto
+import { IonicModule, NavController } from "@ionic/angular";
 import { Authservice } from '../services/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -18,8 +19,7 @@ import { Authservice } from '../services/auth';
 })
 export class LoginPage implements OnInit {
 
-  // Cambiado a camelCase para seguir estándares
-  loginForm: FormGroup; 
+  loginForm: FormGroup;
   errorMessage: string = '';
 
   validationMessages = {
@@ -33,12 +33,13 @@ export class LoginPage implements OnInit {
     ]
   };
 
-  // ¡CORRECCIÓN AQUÍ!: Se añade private authService: Authservice
   constructor(
     private formBuilder: FormBuilder,
     private authService: Authservice,
-    private navCtrl: NavController 
+    private navCtrl: NavController,
+    private router: Router
   ) {
+
     this.loginForm = this.formBuilder.group({
       email: new FormControl('', Validators.compose([
         Validators.required,
@@ -49,22 +50,31 @@ export class LoginPage implements OnInit {
         Validators.minLength(6)
       ]))
     });
+
   }
 
   ngOnInit() {}
 
+  // LOGIN CORREGIDO
   loginUser(credentials: any) {
+
     if (this.loginForm.valid) {
+
       this.authService.loginuser(credentials.email, credentials.password)
         .then(res => {
+
           console.log('Login exitoso:', res);
           this.errorMessage = '';
-          this.navCtrl.navigateForward('/home');
+
+          // 👉 Ir al Intro después de login
+          this.router.navigateByUrl('/intro', { replaceUrl: true });
+
         })
         .catch(err => {
-          //console.error('Error en login:', err);
           this.errorMessage = 'Credenciales inválidas.';
         });
+
     }
+
   }
 }

@@ -5,23 +5,20 @@ import { IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { StorageService } from '../services/storage';
 
-
 interface IntroSlide {
-title: string;
-subtitle: string;
+  title: string;
+  subtitle: string;
 }
 
-
 @Component({
-selector: 'app-intro',
-templateUrl: './intro.page.html',
-styleUrls: ['./intro.page.scss'],
-standalone: true,
-imports: [IonicModule, CommonModule, FormsModule]
+  selector: 'app-intro',
+  templateUrl: './intro.page.html',
+  styleUrls: ['./intro.page.scss'],
+  standalone: true,
+  imports: [IonicModule, CommonModule, FormsModule]
 })
 export class IntroPage implements OnInit {
 
-  
   currentIndex = 0;
 
   slides = [
@@ -29,7 +26,7 @@ export class IntroPage implements OnInit {
       title: 'Bienvenido', 
       subtitle: 'Descubre música sin límites.',
       image: 'assets/imgs/music.jpg',
-      color: '#fa243c' // Rojo Apple Music
+      color: '#fa243c'
     },
     { 
       title: 'Explora', 
@@ -64,9 +61,14 @@ export class IntroPage implements OnInit {
     }
   }
 
+  // FINALIZAR INTRO
   async goBack() {
     await this.storageService.set('introVisto', true);
-    this.router.navigate(['/home']);
+    this.router.navigateByUrl('/home', { replaceUrl: true });
+  }
+
+  // BOTÓN DIRECTO A HOME
+  gothome() {
+    this.router.navigateByUrl('/home', { replaceUrl: true });
   }
 }
-
